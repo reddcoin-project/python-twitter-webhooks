@@ -1,12 +1,12 @@
-from pyee import EventEmitter
+from pyee import BaseEventEmitter
 from .server import WebhookServer
 
 
-class TwitterWebhookAdapter(EventEmitter):
+class TwitterWebhookAdapter(BaseEventEmitter):
     # Initialize the Webhook server
     # If no endpoint is provided, default to listening on '/webhooks/twitter'
     def __init__(self, consumer_secret, endpoint="/webhooks/twitter", server=None, **kwargs):
-        EventEmitter.__init__(self)
+        BaseEventEmitter.__init__(self)
         self.consumer_secret = consumer_secret
         self.server = WebhookServer(consumer_secret, endpoint, self, server, **kwargs)
 
