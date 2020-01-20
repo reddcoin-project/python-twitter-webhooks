@@ -11,3 +11,7 @@ tests/.cache
 .coverage
 .cache
 .DS_Store
+/venv/
+/venv3/
+/build/
+/*.egg-info/
